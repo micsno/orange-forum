@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Orange Forum</title>
+    <link rel="icon" type="image/x-icon" href="./images/orange-75-300x300.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* The container must be positioned relative: */
+        .custom-select {
+            position: relative;
+            font-family: Arial;
+        }
+
+        .custom-select select {
+            display: none;
+            border-radius: 4px;
+            /*hide original SELECT element: */
+        }
+
+        .select-selected {
+            background-color: #f58f00;
+            border-radius: 4px;
+        }
+
+        /* Style the arrow inside the select element: */
+        .select-selected:after {
+            position: absolute;
+            content: "\203A";
+            font-size: 16px;
+            top: 8px;
+            right: 10px;
+            transform: rotate(90deg);
+        }
+
+        /* Point the arrow upwards when the select box is open (active): */
+        .select-selected.select-arrow-active:after {
+            transform: rotate(270deg);
+        }
+
+        /* style the items (options), including the selected item: */
+        .select-items div,
+        .select-selected {
+            color: #ffffff;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+
+        .select-items div {
+            color: #333;
+        }
+
+        /* Style items (options): */
+        .select-items {
+            position: absolute;
+            background-color: azure;
+            border: 1px solid #f58f00;
+            border-radius: 4px;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 99;
+        }
+
+        /* Hide the items when the select box is closed: */
+        .select-hide {
+            display: none;
+        }
+
+        .select-items div:hover,
+        .same-as-selected {
+            background-color: #f58f0072;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-inner-container">
+            <div id="logo">
+                <img src="./images/orange-75-300x300.png" />
+                <h1>Orange Forum</h1>
+            </div>
+            <div class="menu">
+                <a href="index.html" class="menu-link">Home</a>
+                <a href="#" class="menu-link">Channels <span>&rsaquo;</span></a>
+                <a href="#" class="menu-link">Favorites</a>
+                <a href="#" class="menu-link">Friends</a>
+                <div class="custom-select" style="width:100px;"><select>
+                        <option value="">Log in</option>
+                        <option value="">Frodo</option>
+                        <option value="">Sam</option>
+                        <option value="">Gimli</option>
+                        <option value="">Saruman</option>
+                    </select></div>
+                <div id="login-form-container" style="width: 100px;"></div> <!-- This will hold the user login form -->
+            </div>
+        </div>
+    </nav>
+    <script src="login-changes.js"></script>
+</body>
+
+</html>

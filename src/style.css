@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Poetsen+One&display=swap');
+
+html,
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: "Cabin", sans-serif;
+    color: #333;
+    background-color: antiquewhite;
+}
+
+p {
+    color: #333;
+}
+
+nav {
+    width: 100%;
+    padding: 12px 10px 16px;
+    left: 0;
+    top: 0;
+    display: flex;
+    background-color: antiquewhite;
+    color: #f58f00;
+    /* border-bottom: #f58f00 1px solid; */
+    box-shadow: 0 0 4px 2px rgba(128, 128, 128, 0.4);
+    position: fixed;
+    z-index: 2;
+}
+
+.nav-inner-container {
+    width: 1100px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.5px;
+}
+
+nav #logo {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    width: 55px;
+    display: inline-block;
+}
+
+nav h1 {
+    min-width: 250px;
+    padding-top: 2px;
+    display: inline-block;
+    font-size: 30px;
+    font-family: "Poetsen One", sans-serif;
+}
+
+nav .menu {
+    display: inline-flex;
+    margin: 4px 0;
+    padding: 0 8px;
+    align-items: center;
+    align-self: flex-end;
+    justify-self: end;
+    gap: 30px;
+    color: #333;
+    font-size: 16px;
+    letter-spacing: 0px;
+}
+
+nav .menu a {
+    color: #333;
+    text-decoration: none;
+}
+
+nav .menu a:hover {
+    color: #f58f00;
+}
+
+nav .menu a .chevron {
+    display: inline-block;
+    transform: rotate(90deg) translate(2px, -2px);
+}
+
+nav #friendslist {
+    display: none;
+    min-width: 320px;
+    padding: 8px 22px;
+    background-color: antiquewhite;
+    border: 1px solid #f58f00;
+    border-radius: 10px;
+    position: absolute;
+    transform: translate(-40%, 0);
+    top: 52px;
+}
+
+nav a:hover #friendslist #username {
+    color: #333;
+}
+
+nav #friends:hover #friendslist {
+    display: block;
+}
+
+#log-in {
+    padding: 12px 22px;
+    background-color: #f58f00;
+    border-radius: 4px;
+    color: white;
+}
+
+#log-in:hover {
+    cursor: pointer;
+    background-color: #e18300;
+}
+
+#login-form-container {
+    padding: 0;
+}
+
+#login-form-container select {
+    padding: 12px 0 12px 18px;
+    background-color: #f58f00;
+    border: none;
+    border-right: 16px solid transparent;
+    border-radius: 4px;
+    font-family: "Cabin", sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+#login-form-container select:hover {
+    cursor: pointer;
+    background-color: #e18300;
+}
+
+#login-form-container select:focus {
+    outline: 2px solid #b16700;
+}
+
+#login-form-container select option {
+    padding: 12px 22px;
+    background-color: #feaf40;
+    border: none;
+    border-radius: 4px;
+    color: #333;
+    box-shadow: none;
+}
+
+header {
+    width: 1050px;
+    min-height: 250px;
+    margin: 112px auto 0 auto;
+    padding: 12px 28px 28px 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./images/silhouettes.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: orange;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-family: "Poetsen One", sans-serif;
+    font-size: 40px;
+    color: white;
+}
+
+main {
+    width: 1050px;
+    min-height: 90vh;
+    margin: 0 auto;
+    padding: 12px 8px;
+    position: relative;
+    z-index: 1;
+}
+
+p {
+    margin: 18px 28px;
+}
+
+#max-messages-selector {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#message-amount-select {
+    padding: 8px 18px;
+    background-color: #f58f00;
+    border: none;
+    border-radius: 4px;
+    font-family: "Cabin", sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+#max-messages-selector select:hover {
+    cursor: pointer;
+    background-color: #e18300;
+}
+
+#max-messages-selector select:focus {
+    outline: 2px solid #b16700;
+}
+
+#message-amount-select option {
+    background-color: #feaf40;
+    color: #333;
+}
+
+/* ----------------------------- Message container ---------------------------------- */
+.msg-container {
+    width: 100%;
+    margin: 12px 0;
+    padding: 20px;
+    background-color: azure;
+    border-radius: 5px;
+    border: 1px solid orange;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* height: fit-content; */
+}
+
+.msg-header {
+    margin-bottom: 12px;
+    display: grid;
+    grid-template-columns: 75px 2fr 3fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    /* margin: 10px; */
+    background-color: #fafafa;
+    border-radius: 50%;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    border: #ff8000 2px dotted;
+}
+
+#username {
+    display: inline-block;
+    font-weight: bold;
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.date {
+    display: inline-block;
+    font-size: 0.9em;
+    color: #777;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.msg-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 4px;
+}
+
+.msg-actions .icon {
+    background: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.msg-actions .icon svg {
+    width: 24px;
+}
+
+.msg-actions .delete-icon,
+.msg-actions .edit-icon {
+    fill: #777;
+    /* transition: .2s; */
+}
+
+.msg-actions .icon:hover .delete-icon,
+.msg-actions .icon:hover .edit-icon {
+    fill: #f58f00;
+}
+
+.msg {
+    padding: 10px;
+}
+
+/* ----------------------------- Message box ---------------------------------- */
+
+#use-msg-box {
+    width: 60px;
+    height: 60px;
+    background-color: #f58f00;
+    border: 1px solid antiquewhite;
+    border-radius: 50%;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+}
+
+#use-msg-box:hover {
+    cursor: pointer;
+    /* background-color: #e18300; */
+}
+
+#use-msg-box img {
+    width: 32px;
+    transition: .25s;
+}
+
+#use-msg-box:hover img {
+    transform: rotate(-15deg);
+}
+
+#use-msg-box p {
+    visibility: hidden;
+    opacity: 0;
+    font-family: "Cabin", sans-serif;
+    font-size: 15px;
+    line-height: 100%;
+    position: absolute;
+    right: 30px;
+    bottom: -2px;
+    transition: .3s;
+}
+
+#use-msg-box:hover p {
+    cursor: default;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-12px);
+}
+
+#msg-box {
+    display: none;
+    min-width: 400px;
+    min-height: 200px;
+    padding: 18px 28px;
+    background-color: antiquewhite;
+    border: #f58f00 1px solid;
+    border-radius: 20px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 20px;
+}
+
+#msg-box p {
+    text-align: center;
+}
+
+#msg-box textarea {
+    width: 100%;
+    height: 100px;
+    /* margin: 6px auto; */
+    margin-bottom: 12px;
+    display: block;
+    font-family: "Cabin", sans-serif;
+    font-size: 16px;
+    resize: none;
+}
+
+#msg-box #send-message {
+    margin: 6px auto;
+    padding: 12px 22px;
+    display: block;
+    background-color: #f58f00;
+    border-radius: 4px;
+    font-size: 16px;
+    color: white;
+    border: none;
+}
+
+#msg-box #send-message:hover {
+    cursor: pointer;
+    background-color: #e18300;
+}
+
+#msg-box #close-btn {
+    width: 50px;
+    height: 50px;
+    margin: 0px 0px;
+    padding: 8px;
+    background: none;
+    color: #f58f00;
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 6px;
+    top: 0;
+}
+
+#msg-box #close-btn:hover {
+    cursor: pointer;
+    color: #e18300;
+}
+
+.save-button {
+    border: 1px solid orange;
+    color: #333;
+    padding: 4px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+}
+
+.save-button:hover {
+    background-color: orange;
+}
+
+/* ----------------------------- Footer ---------------------------------- */
+
+footer {
+    min-height: 130px;
+    background-color: #f58f00;
+    padding: 30px 36px 36px 36px;
+}
+
+footer .inner-container {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+footer h2 {
+    margin-bottom: 18px;
+    font-family: "Poetsen One", sans-serif;
+    color: #fff;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    font-family: "Cabin", sans-serif;
+    font-size: 15px;
+    color: #fff;
+}
+
+/* ----------------------------- Animations ---------------------------------- */
+@keyframes appear-up {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes disappear-down {
+    from {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%, 50px);
+    }
+}
+
+/* ----------------------------- Responsive ---------------------------------- */
+@media only screen and (max-width: 1200px) {
+    header {
+        max-width: calc(100% - 60px);
+        margin: 83px 30px 0 30px;
+    }
+
+    main {
+        max-width: calc(100% - 60px);
+        margin: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    nav img {
+        width: 50px;
+    }
+
+    nav h1 {
+        min-width: 230px;
+        padding-top: 2px;
+        font-size: 28px;
+    }
+
+    nav .menu {
+        margin: 0px 0;
+        padding: 0 8px;
+        gap: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .menu-link {
+        display: none;
+    }
+}

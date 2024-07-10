@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Message Container</title>
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 20px;
+}
+
+.message-container {
+    display: flex;
+    align-items: flex-start;
+    background-color: azure;
+    border: 1px solid #ff8000;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: #ff8000 2px dotted;
+}
+
+.message-content {
+    flex: 1;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.username {
+    font-weight: bold;
+    color: #333;
+}
+
+.date {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.message-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-button,
+.delete-button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+    background-color: #ff8000;
+}
+
+.message-body {
+    font-size: 1em;
+    color: #333;
+}
+</style>
+<body>
+    <div class="message-container">
+        <img src="/src/images/orange-75-300x300.png" alt="User Avatar" class="avatar">
+        <div class="message-content">
+            <div class="message-header">
+                <span class="username">Username</span>
+                <span class="date">May 22, 2024</span>
+                <div class="message-actions">
+                    <button id="icons" class="glyphicon glyphicon-pencil"></button>
+                    <button id="icons" class="glyphicon glyphicon-trash"></button>
+                </div>
+            </div>
+            <div class="message-body">
+                This is the message content.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

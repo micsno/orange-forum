@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Orange Forum</title>
+    <link rel="icon" type="image/x-icon" href="./images/orange-75-300x300.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-inner-container">
+            <div id="logo">
+                <img src="./images/orange-75-300x300.png" />
+                <h1>Orange Forum</h1>
+            </div>
+            <div class="menu">
+                <a href="index.html" class="menu-link">Home</a>
+                <a href="#" class="menu-link">Channels <span class="chevron">&rsaquo;</span></a>
+                <a href="#" class="menu-link">Favorites</a>
+                <a href="#" id="friends" class="menu-link" style="position: relative;">Friends
+                    <div id="friendslist">
+                        <div class="msg-container">
+                            <div class="msg-content">
+                                <div class="msg-header">
+                                    <img src="images/legolas.jpg" alt="User Avatar" class="avatar">
+                                    <span id="username" style="grid-column: 2/4;">Legolas</span>
+                                    <span class="date" style="grid-column: 2/4;">Friends since 2001</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="msg-container">
+                            <div class="msg-content">
+                                <div class="msg-header">
+                                    <img src="images/gandalf.jpg" alt="User Avatar" class="avatar">
+                                    <span id="username" style="grid-column: 2/4;">Gandalf</span>
+                                    <span class="date" style="grid-column: 2/4;">Friends since 5 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div id="login-form-container" style="width: 100px;"></div> <!-- This will hold the user login form -->
+            </div>
+        </div>
+    </nav>
+    <header>
+        <h1>The Fellowship of the Orange</h1>
+    </header>
+    <main>
+        <div id="max-messages-selector"></div>
+        <div id="messages-container">
+        </div>
+        <button id="use-msg-box"><img src="./images/orange-icon.svg">
+            <p>Write a message</p>
+        </button>
+        <div id="msg-box">
+            <button id="close-btn" title="Close" alt="Close message writing box">+</button>
+            <p>Write your message here.</p>
+            <textarea id="textInput"></textarea>
+            <button id="send-message">Send</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="inner-container">
+            <h2>Orange Forum</h2>
+            <p>&copy; 2024 </p>
+            <p>Created by: Team Orange</p>
+        </div>
+    </footer>
+
+    <script src="script.js"> </script>
+    <script src="script2.js"> </script>
+    <script src="message-box.js"></script>
+</body>
+
+</html>
